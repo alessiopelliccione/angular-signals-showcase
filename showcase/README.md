@@ -102,5 +102,3 @@ The site can be deployed to any static hosting service:
 - Netlify
 - GitHub Pages
 - Cloudflare Pages
-
-Built with [Lovable](https://lovable.dev)
