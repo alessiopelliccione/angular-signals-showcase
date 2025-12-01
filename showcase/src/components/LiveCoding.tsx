@@ -10,7 +10,6 @@ const LiveCoding = () => {
       description: "A simple authentication form with login and signup modes using Signal-based reactive forms",
       whatWillLearn: [
         "Using signals for form state management",
-        "Toggle between different form modes",
         "Implementing form validation with signals",
         "Dynamic validator configuration"
       ],
