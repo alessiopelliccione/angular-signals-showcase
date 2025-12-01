@@ -70,3 +70,27 @@ export class App {
   <button type="submit">Log In</button>
 </form>
 ```
+
+---
+
+Common validators include:
+
+`required()` - Ensures the field has a value
+`email()` - Validates email format
+`min()` / `max()` - Validates number ranges
+`minLength()` / `maxLength()` - Validates string or collection length
+`pattern()` - Validates against a regex pattern
+
+--- 
+
+Every `field()` provides these state signals:
+
+| State | Description |
+|-------|-------------|
+| `valid()` | Returns true if the field passes all validation rules |
+| `touched()` | Returns true if the user has focused and blurred the field |
+| `dirty()` | Returns true if the user has changed the value |
+| `disabled()` | Returns true if the field is disabled |
+| `readonly()` | Returns true if the field is readonly |
+| `pending()` | Returns true if async validation is in progress |
+| `errors()` | Returns an array of validation errors with kind and message properties |
