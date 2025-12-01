@@ -172,23 +172,19 @@ const WhySignalForms = () => {
           <div className="space-y-2">
             <p className="font-mono text-xs text-green-500">// Signal Forms</p>
             <CodeBlock
-              code={`export class LoginComponent {
-  email = signal('');
-  password = signal('');
+              code={`export class App {
 
-  form = computed(() => ({
-    email: this.email(),
-    password: this.password(),
-    valid: this.isValid()
-  }));
+  loginModel = signal<LoginData>({
+    email: '',
+    password: '',
+  });
 
-  private isValid = computed(() =>
-    this.email().includes('@') &&
-    this.password().length >= 8
-  );
-}
-
-// That's it! ✨`}
+  loginForm = form(this.loginModel, (schemaPath) => {
+    required(schemaPath.email, {message: 'Email is required'});
+    email(schemaPath.email, {message: 'Enter a valid email address'});
+    required(schemaPath.password, {message: 'Password is required'});
+  });
+}`}
               language="typescript"
             />
           </div>
