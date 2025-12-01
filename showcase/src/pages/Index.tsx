@@ -7,6 +7,7 @@ import WhySignalForms from "@/components/WhySignalForms";
 import LiveCoding from "@/components/LiveCoding";
 // import RealWorldDemo from "@/components/RealWorldDemo";
 import ArchitectureTips from "@/components/ArchitectureTips";
+import ThankYou from "@/components/ThankYou";
 
 const Index = () => {
   return (
@@ -35,6 +36,7 @@ const Index = () => {
         <div id="tips">
           <ArchitectureTips />
         </div>
+        <ThankYou />
       </main>
       <footer className="bg-card border-t border-border py-8">
         <div className="container mx-auto px-4 text-center">
