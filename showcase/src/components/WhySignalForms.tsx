@@ -6,26 +6,26 @@ const WhySignalForms = () => {
   const benefits = [
     {
       icon: Zap,
-      title: "Performance 🔥",
-      description: "Fine-grained reactivity means only affected parts re-render. No more zone.js overhead.",
+      title: "Auto Sync 🔥",
+      description: "Form data model automatically syncs with bound form fields. No manual wiring required.",
       color: "text-orange-500"
     },
     {
       icon: Code2,
-      title: "Less Boilerplate",
-      description: "No more FormBuilder, FormGroup, FormControl ceremony. Just clean, declarative code.",
+      title: "Type Safety",
+      description: "Fully type-safe schemas and bindings between UI controls and data model.",
       color: "text-blue-500"
     },
     {
       icon: Eye,
-      title: "Clearer State",
-      description: "State is always synchronous and directly accessible. No subscriptions needed.",
+      title: "Centralized Validation",
+      description: "Define all validation rules in one place using a validation schema.",
       color: "text-green-500"
     },
     {
       icon: TestTube2,
-      title: "Easier Testing",
-      description: "Pure functions and synchronous state make unit testing straightforward.",
+      title: "Simpler Code",
+      description: "Less boilerplate, synchronous state, and no subscription management.",
       color: "text-purple-500"
     }
   ];
@@ -38,8 +38,12 @@ const WhySignalForms = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Why Signal Forms Matter
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            The next evolution of form handling in Angular's ecosystem
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
+            Building forms traditionally requires managing multiple concerns separately:
+            tracking values, validation, error states, and UI synchronization—creating boilerplate and complexity
+          </p>
+          <p className="text-lg text-primary font-semibold max-w-2xl mx-auto">
+            Signal Forms solve this by unifying all form concerns into one reactive system
           </p>
         </div>
 
@@ -112,11 +116,15 @@ const WhySignalForms = () => {
               <div className="font-mono text-sm space-y-2">
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                  <span className="text-muted-foreground">Direct signal creation</span>
+                  <span className="text-muted-foreground">Automatic sync (model ↔ UI)</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                  <span className="text-muted-foreground">Automatic reactivity</span>
+                  <span className="text-muted-foreground">Type-safe schemas</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                  <span className="text-muted-foreground">Centralized validation</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-green-500"></div>

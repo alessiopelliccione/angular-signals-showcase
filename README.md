@@ -14,8 +14,7 @@ angular-signals-showcase/
 │   └── package.json
 ├── playground/                    # Angular 21 examples
 │   ├── signal-forms-auth/         # Login/signup form with dynamic validation
-│   ├── signal-contacts-form/      # Dynamic array management with CRUD
-│   └── signal-validation-form/    # Advanced validation patterns
+│   └── signal-contacts-form/      # Dynamic array management with CRUD
 ├── package.json                   # Root monorepo configuration
 └── README.md                      # This file
 ```
@@ -73,18 +72,17 @@ The showcase provides:
 
 ### Playground (`/playground`)
 
-Three complete Angular 21 projects demonstrating Signal Forms patterns:
+Two complete Angular 21 projects demonstrating Signal Forms patterns:
 
 1. **signal-forms-auth**: Login/signup toggle form with dynamic validators
 2. **signal-contacts-form**: Dynamic array management with CRUD operations and bi-directional sync
-3. **signal-validation-form**: Advanced validation (async, cross-field, conditional)
 
 ## 🎯 Showcase Sections
 
 1. **What Are Signals** - Introduction to Angular Signals
 2. **What Are Signal Forms** - Applying Signals to forms
 3. **Why Signal Forms** - Benefits and comparisons
-4. **Let's Build Together** - Three StackBlitz examples with step-by-step learning
+4. **Let's Build Together** - Two StackBlitz examples with step-by-step learning
 5. **Architecture Tips** - Best practices and patterns
 
 ## 🛠️ Available Scripts
@@ -96,7 +94,6 @@ Three complete Angular 21 projects demonstrating Signal Forms patterns:
 | `npm run showcase:preview` | Preview production build |
 | `npm run dev:auth-form` | Run login/signup form example |
 | `npm run dev:contacts-form` | Run dynamic contacts form example |
-| `npm run dev:validation-form` | Run advanced validation example |
 | `npm run install:all` | Install all workspace dependencies |
 | `npm run clean` | Remove all node_modules |
 
@@ -131,7 +128,7 @@ To add a new Angular playground project:
 ## 🌟 Features
 
 - **StackBlitz Integration**: One-click access to live examples
-- **Three Complete Examples**: Auth form, dynamic arrays, advanced validation
+- **Two Complete Examples**: Auth form and dynamic arrays
 - **Zoneless Angular 21**: Modern change detection patterns
 - **Responsive Design**: Works on all screen sizes
 - **Type-Safe**: Full TypeScript support

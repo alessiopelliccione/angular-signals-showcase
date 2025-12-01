@@ -8,12 +8,15 @@ const WhatAreSignalForms = () => {
     <section className="py-16 px-4 bg-muted/20">
       <div className="container mx-auto max-w-5xl">
         <div className="text-center mb-12">
-          <p className="text-sm font-mono text-muted-foreground mb-2">// --- Core Concept</p>
+          <div className="flex items-center justify-center gap-2 mb-3">
+            <p className="text-sm font-mono text-muted-foreground">// --- Core Concept</p>
+            <Badge variant="secondary" className="text-xs">Experimental</Badge>
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             What Are Signal Forms?
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Applying the power of Signals to form state management
+            A library for managing form state in Angular by building on the reactive foundation of signals
           </p>
         </div>
 
@@ -31,10 +34,10 @@ const WhatAreSignalForms = () => {
                     <Badge variant="outline" className="text-xs">Angular 21+</Badge>
                   </div>
                   <p className="text-muted-foreground mb-4">
-                    Signal Forms bring reactive forms to the next level by using signals
-                    to represent form state. Instead of observables and subscriptions,
-                    you get <span className="text-primary font-semibold">direct, synchronous access</span> to
-                    form values and validation state.
+                    An experimental library that manages form state with <span className="text-primary font-semibold">automatic two-way binding</span>,
+                    <span className="text-primary font-semibold"> type-safe field access</span>, and
+                    <span className="text-primary font-semibold"> schema-based validation</span>.
+                    All form concerns—tracking values, validation, errors, UI sync—are handled automatically.
                   </p>
                   <CodeBlock
                     code={`// Traditional way
@@ -57,35 +60,37 @@ const value = this.form.value(); // ✨`}
                   <ArrowRight className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-3">How It Works</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Each form field is a signal. Validators are computed signals.
-                    The entire form state is reactive and type-safe by default.
+                  <h3 className="text-xl font-bold mb-3">The Three Pillars</h3>
+                  <p className="text-muted-foreground mb-4 text-sm">
+                    Signal Forms address form complexity through three core capabilities
                   </p>
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
                       <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <span className="text-primary text-xs font-bold">1</span>
                       </div>
-                      <p className="text-sm">Define form fields as signals</p>
+                      <div>
+                        <p className="text-sm font-bold">Automatic Synchronization</p>
+                        <p className="text-xs text-muted-foreground">Form model syncs with UI automatically</p>
+                      </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <span className="text-primary text-xs font-bold">2</span>
                       </div>
-                      <p className="text-sm">Create computed validators</p>
+                      <div>
+                        <p className="text-sm font-bold">Type Safety</p>
+                        <p className="text-xs text-muted-foreground">Fully typed schemas & UI bindings</p>
+                      </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <span className="text-primary text-xs font-bold">3</span>
                       </div>
-                      <p className="text-sm">Bind to template with signals</p>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-primary text-xs font-bold">4</span>
+                      <div>
+                        <p className="text-sm font-bold">Centralized Validation</p>
+                        <p className="text-xs text-muted-foreground">All validation rules in one schema</p>
                       </div>
-                      <p className="text-sm">Automatic reactivity everywhere!</p>
                     </div>
                   </div>
                 </div>
@@ -94,110 +99,32 @@ const value = this.form.value(); // ✨`}
           </Card>
         </div>
 
-        {/* Comparison */}
-        <Card className="border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-accent/5">
-          <CardContent className="pt-6">
-            <h3 className="text-xl font-bold mb-6 text-center">A Simple Comparison</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              {/* Traditional */}
-              <div>
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-2 h-2 rounded-full bg-orange-500"></div>
-                  <h4 className="font-mono text-sm font-bold">Traditional Reactive Forms</h4>
-                </div>
-                <CodeBlock
-                  code={`// Component
-form = new FormGroup({
-  email: new FormControl(''),
-  password: new FormControl('')
-});
-
-constructor() {
-  this.form.valueChanges
-    .subscribe(value => {
-      // Handle changes
-    });
-}
-
-// Template
-<input [formControl]="form.get('email')">
-
-// Access value
-const email = this.form.get('email')?.value;`}
-                  language="typescript"
-                />
-              </div>
-
-              {/* Signal Forms */}
-              <div>
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                  <h4 className="font-mono text-sm font-bold">Signal Forms</h4>
-                </div>
-                <CodeBlock
-                  code={`// Component
-email = signal('');
-password = signal('');
-
-form = computed(() => ({
-  email: this.email(),
-  password: this.password()
-}));
-
-// Automatic reactivity!
-
-// Template
-<input [value]="email()"
-       (input)="email.set($event.value)">
-
-// Access value
-const email = this.email(); // ✨`}
-                  language="typescript"
-                />
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Key Benefits */}
+        {/* When to Use */}
         <div className="mt-12">
-          <Card className="border-2 border-accent/30">
+          <Card className="border-2 border-orange-500/30 bg-orange-500/5">
             <CardContent className="pt-6">
-              <div className="flex items-start gap-4">
-                <div className="p-3 bg-accent/10 rounded-lg flex-shrink-0">
-                  <CheckCircle2 className="w-6 h-6 text-accent" />
+              <h3 className="text-lg font-bold mb-3 text-center">When to Use Signal Forms?</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 mb-2">
+                    <CheckCircle2 className="w-5 h-5 text-green-500" />
+                    <h4 className="font-bold text-sm">Best For:</h4>
+                  </div>
+                  <div className="space-y-1.5 pl-7">
+                    <p className="text-sm text-muted-foreground">✓ New applications built with signals</p>
+                    <p className="text-sm text-muted-foreground">✓ Projects targeting zoneless Angular</p>
+                    <p className="text-sm text-muted-foreground">✓ Teams comfortable with experimental features</p>
+                  </div>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold mb-4">Why Signal Forms Matter</h3>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2 text-sm">
-                        <div className="w-1.5 h-1.5 rounded-full bg-accent"></div>
-                        <span><span className="font-bold">No subscriptions</span> - synchronous by design</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm">
-                        <div className="w-1.5 h-1.5 rounded-full bg-accent"></div>
-                        <span><span className="font-bold">Type-safe</span> - TypeScript knows your form structure</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm">
-                        <div className="w-1.5 h-1.5 rounded-full bg-accent"></div>
-                        <span><span className="font-bold">Less boilerplate</span> - simpler, cleaner code</span>
-                      </div>
-                    </div>
-                    <div className="space-y-2">
-                      <div className="flex items-center gap-2 text-sm">
-                        <div className="w-1.5 h-1.5 rounded-full bg-accent"></div>
-                        <span><span className="font-bold">Better performance</span> - granular updates only</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm">
-                        <div className="w-1.5 h-1.5 rounded-full bg-accent"></div>
-                        <span><span className="font-bold">Easier testing</span> - pure functions, no async</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-sm">
-                        <div className="w-1.5 h-1.5 rounded-full bg-accent"></div>
-                        <span><span className="font-bold">Zoneless compatible</span> - ready for the future</span>
-                      </div>
-                    </div>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 mb-2">
+                    <CheckCircle2 className="w-5 h-5 text-orange-500" />
+                    <h4 className="font-bold text-sm">Stick with Reactive Forms If:</h4>
+                  </div>
+                  <div className="space-y-1.5 pl-7">
+                    <p className="text-sm text-muted-foreground">• Existing app with Reactive Forms</p>
+                    <p className="text-sm text-muted-foreground">• Production stability is critical</p>
+                    <p className="text-sm text-muted-foreground">• Need mature ecosystem support</p>
                   </div>
                 </div>
               </div>

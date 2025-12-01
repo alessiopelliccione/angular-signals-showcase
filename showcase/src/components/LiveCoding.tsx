@@ -35,23 +35,6 @@ const LiveCoding = () => {
       port: "4200",
       stackblitzUrl: "https://stackblitz.com/github/alessiopelliccione/angular-signals-showcase/tree/main/playground/signal-contacts-form",
       githubUrl: "https://github.com/alessiopelliccione/angular-signals-showcase/tree/main/playground/signal-contacts-form"
-    },
-    {
-      id: "validation-form",
-      title: "Advanced Validation",
-      label: "Validation",
-      description: "Advanced validation patterns with async validators, cross-field validation, and conditional validation",
-      whatWillLearn: [
-        "Async validators for API calls (username uniqueness)",
-        "Cross-field validation (password matching)",
-        "Conditional validation (VAT required for companies)",
-        "Form state tracking (pending, touched, dirty, valid)",
-        "Clean error handling with typed error keys"
-      ],
-      command: "npm run dev:validation-form",
-      port: "4200",
-      stackblitzUrl: "https://stackblitz.com/github/alessiopelliccione/angular-signals-showcase/tree/main/playground/signal-validation-form",
-      githubUrl: "https://github.com/alessiopelliccione/angular-signals-showcase/tree/main/playground/signal-validation-form"
     }
   ];
 
@@ -69,7 +52,7 @@ const LiveCoding = () => {
         </div>
 
         <Tabs defaultValue="auth-form" className="w-full">
-          <TabsList className="grid grid-cols-3 w-full max-w-3xl mx-auto mb-8">
+          <TabsList className="grid grid-cols-2 w-full max-w-2xl mx-auto mb-8">
             {examples.map((example) => (
               <TabsTrigger
                 key={example.id}

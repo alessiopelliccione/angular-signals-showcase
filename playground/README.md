@@ -1,6 +1,6 @@
 # Playground - Angular Signal Forms Examples
 
-This directory contains three complete Angular 21 projects demonstrating Signal Forms patterns and best practices.
+This directory contains two complete Angular 21 projects demonstrating Signal Forms patterns and best practices.
 
 ## 📁 Projects
 
@@ -52,30 +52,6 @@ npm run dev:contacts-form
 
 ---
 
-### 3. signal-validation-form
-
-**Advanced Validation Patterns**
-
-- Async validators for API calls (username uniqueness)
-- Cross-field validation (password matching)
-- Conditional validation (VAT required for companies)
-- Form state tracking (pending, touched, dirty, valid)
-
-```bash
-npm run dev:validation-form
-```
-
-[Open in StackBlitz](https://stackblitz.com/github/alessiopelliccione/angular-signals-showcase/tree/main/playground/signal-validation-form) | [View Code](./signal-validation-form)
-
-**What you'll learn:**
-- Async validators for API calls
-- Cross-field validation
-- Conditional validation
-- Form state tracking
-- Clean error handling with typed error keys
-
----
-
 ## 🚀 Running Examples Locally
 
 All examples can be run from the root directory:
@@ -84,7 +60,6 @@ All examples can be run from the root directory:
 # From root directory
 npm run dev:auth-form
 npm run dev:contacts-form
-npm run dev:validation-form
 ```
 
 Each example will open automatically at `http://localhost:4200/`
