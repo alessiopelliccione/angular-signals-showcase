@@ -137,7 +137,7 @@ To add a new Angular playground project:
 ## 📚 Resources
 
 - [Angular Signals Documentation](https://angular.dev/guide/signals)
-- [Angular Reactive Forms](https://angular.dev/guide/forms)
+- [Angular Signals Forms](https://angular.dev/guide/forms/signals/overview)
 - [StackBlitz Examples](https://stackblitz.com/@alessiopelliccione)
 
 ## 📄 License
