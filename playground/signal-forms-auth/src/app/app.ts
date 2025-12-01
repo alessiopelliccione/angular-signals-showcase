@@ -1,88 +1,34 @@
 import { Component, signal } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 
+/**
+ * Auth Form Example
+ * 
+ * This component demonstrates how to combine Angular Signals with Reactive Forms.
+ * 
+ * Key Concepts:
+ * - **State Management**: Signals (`isLogin`, `submitted`) manage the UI state (loading, visibility, mode).
+ * - **Form Model**: `FormGroup` serves as the single source of truth for form data and validation.
+ * - **Dynamic Validation**: Validators are added/removed based on the signal state (login vs signup).
+ */
 @Component({
   selector: 'app-root',
   imports: [ReactiveFormsModule],
   styleUrl: './app.css',
-  template: `
-    <div class="container">
-      <div class="card">
-        <h1>{{ isLogin() ? 'Login' : 'Sign Up' }}</h1>
-
-        <form [formGroup]="form" (ngSubmit)="onSubmit()">
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input
-              id="email"
-              type="email"
-              formControlName="email"
-              placeholder="Enter your email"
-            />
-            @if (form.controls.email.invalid && form.controls.email.touched) {
-              <span class="error">Valid email required</span>
-            }
-          </div>
-
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input
-              id="password"
-              type="password"
-              formControlName="password"
-              placeholder="Enter your password"
-            />
-            @if (form.controls.password.invalid && form.controls.password.touched) {
-              <span class="error">Password required (min 6 chars)</span>
-            }
-          </div>
-
-          @if (!isLogin()) {
-            <div class="form-group">
-              <label for="confirmPassword">Confirm Password</label>
-              <input
-                id="confirmPassword"
-                type="password"
-                formControlName="confirmPassword"
-                placeholder="Confirm your password"
-              />
-              @if (form.controls.confirmPassword.invalid && form.controls.confirmPassword.touched) {
-                <span class="error">Passwords must match</span>
-              }
-            </div>
-          }
-
-          <button type="submit" [disabled]="form.invalid">
-            {{ isLogin() ? 'Login' : 'Sign Up' }}
-          </button>
-        </form>
-
-        <div class="toggle">
-          <p>
-            {{ isLogin() ? "Don't have an account?" : 'Already have an account?' }}
-            <a (click)="toggleMode()">
-              {{ isLogin() ? 'Sign Up' : 'Login' }}
-            </a>
-          </p>
-        </div>
-
-        @if (submitted()) {
-          <div class="success">
-            ✓ {{ isLogin() ? 'Logged in' : 'Signed up' }} successfully!
-          </div>
-        }
-      </div>
-    </div>
-  `,
+  templateUrl: './app.html',
 })
 export class App {
   // Signal to toggle between login and signup modes
+  // This represents the "View State" - unrelated to the form data itself
   protected readonly isLogin = signal(true);
 
   // Signal to show success message after form submission
   protected readonly submitted = signal(false);
 
-  // Reactive form with email, password, and confirmPassword fields
+  // Reactive form model
+  // The FormGroup holds the values and validation state of the form fields.
+  // Unlike the "Signal Forms" pattern where a signal holds the model, here Reactive Forms
+  // manages the data, while signals manage the *context* around the form.
   protected form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)]),
@@ -91,33 +37,42 @@ export class App {
 
   /**
    * Toggle between login and signup modes
-   * - Updates the isLogin signal
-   * - Resets the form
-   * - Dynamically adds/removes validators for confirmPassword
+   * 
+   * When the mode changes (via signal update), we:
+   * 1. Update the UI state (isLogin)
+   * 2. Reset the form model (form.reset())
+   * 3. Update the validation rules (conditional logic)
    */
   toggleMode() {
+    // Update signal state
     this.isLogin.update(v => !v);
     this.submitted.set(false);
+    
+    // Reset form model
     this.form.reset();
 
-    // Add validator for confirmPassword in signup mode
+    // Dynamic validation logic based on signal state
     if (!this.isLogin()) {
+      // Signup mode: specific validation
       this.form.controls.confirmPassword.setValidators([Validators.required]);
     } else {
+      // Login mode: simplify validation
       this.form.controls.confirmPassword.clearValidators();
     }
+    
+    // Ensure validation state is reflected immediately
     this.form.controls.confirmPassword.updateValueAndValidity();
   }
 
   /**
    * Handle form submission
-   * - Validates the form
-   * - Checks password match for signup mode
-   * - Shows success message
+   * 
+   * Accesses the form model state (`this.form.valid`, `this.form.value`) 
+   * and updates the UI signals (`submitted`).
    */
   onSubmit() {
     if (this.form.valid) {
-      // Additional validation for signup: check password match
+      // Additional validation that depends on multiple fields
       if (!this.isLogin()) {
         const password = this.form.controls.password.value;
         const confirmPassword = this.form.controls.confirmPassword.value;
@@ -128,12 +83,13 @@ export class App {
         }
       }
 
+      // Log the form data (The "Model" value)
       console.log('Form submitted:', {
         mode: this.isLogin() ? 'login' : 'signup',
         data: this.form.value
       });
 
-      // Show success message for 3 seconds
+      // Update UI signal to show feedback
       this.submitted.set(true);
       setTimeout(() => this.submitted.set(false), 3000);
     }
