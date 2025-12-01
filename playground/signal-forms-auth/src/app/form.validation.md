@@ -1,35 +1,3 @@
-```html
-<form (submit)="onSubmit($event)">
-  <div>
-    <label>
-      Email:
-      <input type="email" [field]="loginForm.email" />
-    </label>
-    @if (loginForm.email().touched() && loginForm.email().invalid()) {
-      <ul class="error-list">
-        @for (error of loginForm.email().errors(); track error) {
-          <li>{{ error.message }}</li>
-        }
-      </ul>
-    }
-  </div>
-  <div>
-    <label>
-      Password:
-      <input type="password" [field]="loginForm.password" />
-    </label>
-    @if (loginForm.password().touched() && loginForm.password().invalid()) {
-      <div class="error-list">
-        @for (error of loginForm.password().errors(); track error) {
-          <p>{{ error.message }}</p>
-        }
-      </div>
-    }
-  </div>
-  <button type="submit">Log In</button>
-</form>
-```
-
 ```typescript
 import {Component, signal, ChangeDetectionStrategy} from '@angular/core';
 import {form, Field, required, email} from '@angular/forms/signals';
@@ -69,4 +37,36 @@ export class App {
 	}
 
 }
+```
+
+```html
+<form (submit)="onSubmit($event)">
+  <div>
+    <label>
+      Email:
+      <input type="email" [field]="loginForm.email" />
+    </label>
+    @if (loginForm.email().touched() && loginForm.email().invalid()) {
+      <ul class="error-list">
+        @for (error of loginForm.email().errors(); track error) {
+          <li>{{ error.message }}</li>
+        }
+      </ul>
+    }
+  </div>
+  <div>
+    <label>
+      Password:
+      <input type="password" [field]="loginForm.password" />
+    </label>
+    @if (loginForm.password().touched() && loginForm.password().invalid()) {
+      <div class="error-list">
+        @for (error of loginForm.password().errors(); track error) {
+          <p>{{ error.message }}</p>
+        }
+      </div>
+    }
+  </div>
+  <button type="submit">Log In</button>
+</form>
 ```
