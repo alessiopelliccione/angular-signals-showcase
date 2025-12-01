@@ -13,8 +13,7 @@ angular-signals-showcase/
 │   ├── public/
 │   └── package.json
 ├── playground/                    # Angular 21 examples
-│   ├── signal-forms-auth/         # Login/signup form with dynamic validation
-│   └── signal-contacts-form/      # Dynamic array management with CRUD
+│   └── signal-forms-auth/         # Login/signup form with dynamic validation
 ├── package.json                   # Root monorepo configuration
 └── README.md                      # This file
 ```
