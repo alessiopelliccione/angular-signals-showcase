@@ -72,18 +72,17 @@ The showcase provides:
 
 ### Playground (`/playground`)
 
-Two complete Angular 21 projects demonstrating Signal Forms patterns:
+Complete Angular 21 project demonstrating Signal Forms patterns:
 
 1. **signal-forms-auth**: Login/signup toggle form with dynamic validators
-2. **signal-contacts-form**: Dynamic array management with CRUD operations and bi-directional sync
 
 ## 🎯 Showcase Sections
 
 1. **What Are Signals** - Introduction to Angular Signals
 2. **What Are Signal Forms** - Applying Signals to forms
 3. **Why Signal Forms** - Benefits and comparisons
-4. **Let's Build Together** - Two StackBlitz examples with step-by-step learning
-5. **Architecture Tips** - Best practices and patterns
+4. **Let's Build Together** - StackBlitz example with step-by-step learning
+5. **Validators & Field State** - Common validators and field state signals
 
 ## 🛠️ Available Scripts
 
@@ -93,7 +92,6 @@ Two complete Angular 21 projects demonstrating Signal Forms patterns:
 | `npm run showcase:build` | Build showcase for production |
 | `npm run showcase:preview` | Preview production build |
 | `npm run dev:auth-form` | Run login/signup form example |
-| `npm run dev:contacts-form` | Run dynamic contacts form example |
 | `npm run install:all` | Install all workspace dependencies |
 | `npm run clean` | Remove all node_modules |
 
@@ -127,8 +125,8 @@ To add a new Angular playground project:
 
 ## 🌟 Features
 
-- **StackBlitz Integration**: One-click access to live examples
-- **Two Complete Examples**: Auth form and dynamic arrays
+- **StackBlitz Integration**: One-click access to live example
+- **Complete Auth Form Example**: Login/signup form with dynamic validators
 - **Zoneless Angular 21**: Modern change detection patterns
 - **Responsive Design**: Works on all screen sizes
 - **Type-Safe**: Full TypeScript support

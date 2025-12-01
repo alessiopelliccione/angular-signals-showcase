@@ -12,7 +12,6 @@
     "showcase:build": "npm run build --workspace=showcase",
     "showcase:preview": "npm run preview --workspace=showcase",
     "dev:auth-form": "npm run dev --workspace=signal-forms-auth",
-    "dev:contacts-form": "npm run dev --workspace=signal-contacts-form",
     "install:all": "npm install",
     "clean": "rm -rf showcase/node_modules playground/*/node_modules node_modules"
   },

@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import PresentationMap from "@/components/PresentationMap";
 import WhatAreSignals from "@/components/WhatAreSignals";
 import WhatAreSignalForms from "@/components/WhatAreSignalForms";
 import WhySignalForms from "@/components/WhySignalForms";
@@ -15,6 +16,7 @@ const Index = () => {
       <Header />
       <main className="min-h-screen">
         <Hero />
+        <PresentationMap />
         <div id="signals">
           <WhatAreSignals />
         </div>

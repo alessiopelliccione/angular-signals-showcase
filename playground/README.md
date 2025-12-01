@@ -1,10 +1,10 @@
-# Playground - Angular Signal Forms Examples
+# Playground - Angular Signal Forms Example
 
-This directory contains two complete Angular 21 projects demonstrating Signal Forms patterns and best practices.
+This directory contains a complete Angular 21 project demonstrating Signal Forms patterns and best practices.
 
-## 📁 Projects
+## 📁 Project
 
-### 1. signal-forms-auth
+### signal-forms-auth
 
 **Login/Signup Form with Dynamic Validation**
 
@@ -22,60 +22,29 @@ npm run dev:auth-form
 
 **What you'll learn:**
 - Using signals for form state management
-- Toggle between different form modes
 - Implementing form validation with signals
 - Dynamic validator configuration
 
 ---
 
-### 2. signal-contacts-form
+## 🚀 Running Example Locally
 
-**Dynamic Contacts Form with CRUD Operations**
-
-- Add, remove, and reorder contacts
-- Bi-directional data synchronization (UI ↔ Model)
-- Simulated server fetch/patch operations
-- Dynamic array management with signals
-
-```bash
-npm run dev:contacts-form
-```
-
-[Open in StackBlitz](https://stackblitz.com/github/alessiopelliccione/angular-signals-showcase/tree/main/playground/signal-contacts-form) | [View Code](./signal-contacts-form)
-
-**What you'll learn:**
-- Managing arrays with signals (add, remove, reorder)
-- Bi-directional sync: UI ↔ Model
-- Using @for with track for dynamic lists
-- Simulating server fetch/patch operations
-- Why this is simpler than FormArray
-
----
-
-## 🚀 Running Examples Locally
-
-All examples can be run from the root directory:
+The example can be run from the root directory:
 
 ```bash
 # From root directory
 npm run dev:auth-form
-npm run dev:contacts-form
 ```
 
-Each example will open automatically at `http://localhost:4200/`
+The example will open automatically at `http://localhost:4200/`
 
 ## 🌐 Opening in StackBlitz
 
-Each project includes a StackBlitz link for online editing and sharing. Click the "Open in StackBlitz" badges in each project's README or use:
-
-```bash
-cd playground/signal-forms-auth
-npm run stackblitz
-```
+The project includes a StackBlitz link for online editing and sharing. Click the "Open in StackBlitz" badge in the project's README.
 
 ## 🛠️ Technologies
 
-All playground projects use:
+The playground project uses:
 - **Angular 21** - Latest version with zoneless change detection
 - **TypeScript 5.9** - Strict mode enabled
 - **Reactive Forms** - Angular's form API
@@ -84,7 +53,7 @@ All playground projects use:
 
 ## 📝 Project Structure
 
-Each project follows a minimal structure:
+The project follows a minimal structure:
 
 ```
 signal-xxx-form/
