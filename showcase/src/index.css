@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Light Theme - Optimized for Presentations */
+    /* Professional neutral colors with Angular accent for hero */
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 222 47% 25%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 40%;
+
+    --accent: 220 90% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 88%;
+    --input: 214 32% 91%;
+    --ring: 220 90% 50%;
+
+    --radius: 0.5rem;
+
+    /* Custom design tokens - Angular gradient for hero only */
+    --gradient-hero: linear-gradient(135deg, hsl(348 86% 50% / 0.12) 0%, hsl(220 90% 50% / 0.1) 50%, hsl(0 0% 100%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(222 47% 25%) 0%, hsl(220 90% 50%) 100%);
+    --shadow-soft: 0 4px 20px hsl(0 0% 0% / 0.08);
+    --shadow-medium: 0 8px 30px hsl(0 0% 0% / 0.12);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 222 47% 25%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 90% 50%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 214 32% 88%;
+    --sidebar-ring: 220 90% 50%;
+  }
+
+  /* Dark mode (optional - for development/testing) */
+  .dark {
+    --background: 222 47% 7%;
+    --foreground: 215 20% 95%;
+
+    --card: 217 33% 10%;
+    --card-foreground: 215 20% 95%;
+
+    --popover: 217 33% 10%;
+    --popover-foreground: 215 20% 95%;
+
+    --primary: 348 86% 61%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 217 33% 15%;
+    --secondary-foreground: 215 20% 95%;
+
+    --muted: 217 33% 15%;
+    --muted-foreground: 215 16% 60%;
+
+    --accent: 220 90% 56%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 348 86% 61%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(348 86% 61% / 0.15) 0%, hsl(220 90% 56% / 0.1) 50%, hsl(222 47% 7%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(348 86% 61%) 0%, hsl(220 90% 56%) 100%);
+
+    --sidebar-background: 217 33% 10%;
+    --sidebar-foreground: 215 20% 95%;
+    --sidebar-primary: 348 86% 61%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 90% 56%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 217 33% 18%;
+    --sidebar-ring: 348 86% 61%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Monospace font for code and technical elements */
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  }
+
+  /* Smooth fade-in animation for sections */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  /* Code divider comment style */
+  .code-divider {
+    font-family: 'JetBrains Mono', 'Fira Code', 'SF Mono', Monaco, Consolas, monospace;
+    color: hsl(var(--muted-foreground));
+    font-size: 0.875rem;
+    opacity: 0.7;
+  }
+
+  /* Custom scrollbar for coding vibes */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Angular 21 - Login/Signup Signal Form",
+  "description": "Simple authentication form with login and signup modes using Angular 21 Signal Forms - Zoneless",
+  "template": "angular-cli",
+  "tags": ["angular", "signals", "forms", "authentication", "zoneless"],
+  "dependencies": {
+    "@angular/animations": "^21.0.0",
+    "@angular/common": "^21.0.0",
+    "@angular/compiler": "^21.0.0",
+    "@angular/core": "^21.0.0",
+    "@angular/forms": "^21.0.0",
+    "@angular/platform-browser": "^21.0.0",
+    "@angular/platform-browser-dynamic": "^21.0.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.15.0"
+  }
+}

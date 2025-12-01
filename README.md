@@ -1,73 +1,150 @@
-# Welcome to your Lovable project
+# Signal Forms: The Modern Way to Build Forms in Angular
 
-## Project info
+A comprehensive showcase demonstrating how to build reactive forms in Angular 21 using Signals. This monorepo includes a presentation website and multiple Angular playground examples.
 
-**URL**: https://lovable.dev/projects/5c67676c-cdc3-410c-a6df-a386927bbd8a
+**Author**: Alessio Pelliccione
 
-## How can I edit this code?
+## 📦 Project Structure
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/5c67676c-cdc3-410c-a6df-a386927bbd8a) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+angular-signals-showcase/
+├── showcase/                      # React presentation website
+│   ├── src/
+│   ├── public/
+│   └── package.json
+├── playground/                    # Angular 21 examples
+│   ├── signal-forms-auth/         # Login/signup form with dynamic validation
+│   ├── signal-contacts-form/      # Dynamic array management with CRUD
+│   └── signal-validation-form/    # Advanced validation patterns
+├── package.json                   # Root monorepo configuration
+└── README.md                      # This file
 ```
 
-**Edit a file directly in GitHub**
+## 🚀 Getting Started
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Install Dependencies
 
-**Use GitHub Codespaces**
+From the root directory:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+npm install
+```
 
-## What technologies are used for this project?
+This will install dependencies for all workspaces (showcase and playground projects).
 
-This project is built with:
+### Run the Showcase Website
 
+```bash
+npm run showcase:dev
+```
+
+The showcase website will be available at `http://localhost:8081/`
+
+### Build the Showcase
+
+```bash
+npm run showcase:build
+```
+
+### Preview Production Build
+
+```bash
+npm run showcase:preview
+```
+
+## 📂 Workspaces
+
+### Showcase (`/showcase`)
+
+React + TypeScript presentation website built with:
+- **Vite** - Fast build tool
+- **React 18** - UI framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **shadcn/ui** - UI components
+- **Lucide React** - Icons
+
+The showcase provides:
+- Introduction to Signals in Angular
+- What are Signal Forms
+- Why they matter (performance, boilerplate, clarity, testing)
+- Live coding demonstrations with StackBlitz integration
+- Architecture tips and best practices
+
+### Playground (`/playground`)
+
+Three complete Angular 21 projects demonstrating Signal Forms patterns:
+
+1. **signal-forms-auth**: Login/signup toggle form with dynamic validators
+2. **signal-contacts-form**: Dynamic array management with CRUD operations and bi-directional sync
+3. **signal-validation-form**: Advanced validation (async, cross-field, conditional)
+
+## 🎯 Showcase Sections
+
+1. **What Are Signals** - Introduction to Angular Signals
+2. **What Are Signal Forms** - Applying Signals to forms
+3. **Why Signal Forms** - Benefits and comparisons
+4. **Let's Build Together** - Three StackBlitz examples with step-by-step learning
+5. **Architecture Tips** - Best practices and patterns
+
+## 🛠️ Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run showcase:dev` | Start showcase dev server |
+| `npm run showcase:build` | Build showcase for production |
+| `npm run showcase:preview` | Preview production build |
+| `npm run dev:auth-form` | Run login/signup form example |
+| `npm run dev:contacts-form` | Run dynamic contacts form example |
+| `npm run dev:validation-form` | Run advanced validation example |
+| `npm run install:all` | Install all workspace dependencies |
+| `npm run clean` | Remove all node_modules |
+
+## 📝 Adding Playground Projects
+
+To add a new Angular playground project:
+
+1. Create a new Angular project in the `playground/` directory:
+   ```bash
+   cd playground
+   ng new my-signal-forms-example
+   ```
+
+2. The project will automatically be part of the workspace
+
+3. Push to GitHub and open in StackBlitz during the presentation
+
+## 🎨 Tech Stack
+
+### Showcase Website
+- React 18
+- TypeScript 5
 - Vite
-- TypeScript
-- React
-- shadcn-ui
 - Tailwind CSS
+- shadcn/ui
 
-## How can I deploy this project?
+### Playground
+- Angular 21+
+- TypeScript 5
+- Signal Forms (experimental)
 
-Simply open [Lovable](https://lovable.dev/projects/5c67676c-cdc3-410c-a6df-a386927bbd8a) and click on Share -> Publish.
+## 🌟 Features
 
-## Can I connect a custom domain to my Lovable project?
+- **StackBlitz Integration**: One-click access to live examples
+- **Three Complete Examples**: Auth form, dynamic arrays, advanced validation
+- **Zoneless Angular 21**: Modern change detection patterns
+- **Responsive Design**: Works on all screen sizes
+- **Type-Safe**: Full TypeScript support
+- **Professional Theme**: Light theme optimized for presentations
 
-Yes, you can!
+## 📚 Resources
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- [Angular Signals Documentation](https://angular.dev/guide/signals)
+- [Angular Reactive Forms](https://angular.dev/guide/forms)
+- [StackBlitz Examples](https://stackblitz.com/@alessiopelliccione)
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 📄 License
+
+MIT License - Copyright (c) 2025 Alessio Pelliccione
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
