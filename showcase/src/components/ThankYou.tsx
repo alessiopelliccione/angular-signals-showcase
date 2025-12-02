@@ -45,7 +45,7 @@ const ThankYou = () => {
               <span className="text-primary">//</span> Happy coding with signals! 🚀
             </p>
 
-            <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto">
+            <div className="grid sm:grid-cols-2 gap-4 max-w-2xl mx-auto mb-8">
               {links.map((link, index) => (
                 <a
                   key={index}
@@ -60,6 +60,10 @@ const ThankYou = () => {
                 </a>
               ))}
             </div>
+
+            <p className="text-sm text-muted-foreground">
+              Made with <span className="text-red-500">♥</span> by Alessio Pelliccione
+            </p>
           </div>
         </div>
       </div>
