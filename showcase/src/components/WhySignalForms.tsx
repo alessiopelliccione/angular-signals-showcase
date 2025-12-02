@@ -99,11 +99,6 @@ const WhySignalForms = () => {
                   <span className="text-muted-foreground">Memory leaks risk</span>
                 </div>
               </div>
-              <div className="mt-4 pt-4 border-t border-red-500/30">
-                <p className="text-center text-sm font-bold text-red-500">
-                  ~100 lines of boilerplate
-                </p>
-              </div>
             </div>
           </div>
 
@@ -130,11 +125,6 @@ const WhySignalForms = () => {
                   <div className="w-2 h-2 rounded-full bg-green-500"></div>
                   <span className="text-muted-foreground">Synchronous state</span>
                 </div>
-              </div>
-              <div className="mt-8 pt-4 border-t border-green-500/30">
-                <p className="text-center text-sm font-bold text-green-500">
-                  ~20 lines of clean code
-                </p>
               </div>
             </div>
           </div>
