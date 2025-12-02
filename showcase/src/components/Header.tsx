@@ -19,11 +19,13 @@ const Header = () => {
   };
 
   const navItems = [
+    { id: "agenda", label: "Agenda" },
     { id: "signals", label: "Signals" },
     { id: "signal-forms", label: "Forms" },
     { id: "why", label: "Why" },
     { id: "coding", label: "Code" },
-    { id: "tips", label: "Tips" },
+    { id: "validators", label: "Validators & State" },
+    { id: "thanks", label: "Grazie" },
   ];
 
   return (

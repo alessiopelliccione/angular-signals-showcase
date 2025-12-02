@@ -16,7 +16,9 @@ const Index = () => {
       <Header />
       <main className="min-h-screen">
         <Hero />
-        <PresentationMap />
+        <div id="agenda">
+          <PresentationMap />
+        </div>
         <div id="signals">
           <WhatAreSignals />
         </div>
@@ -35,10 +37,12 @@ const Index = () => {
         {/* <div id="demo">
           <RealWorldDemo />
         </div> */}
-        <div id="tips">
+        <div id="validators">
           <ArchitectureTips />
         </div>
-        <ThankYou />
+        <div id="thanks">
+          <ThankYou />
+        </div>
       </main>
       <footer className="bg-card border-t border-border py-8">
         <div className="container mx-auto px-4 text-center">
